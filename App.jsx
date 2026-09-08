@@ -80,7 +80,7 @@ const SEED_INVOICES = [
 
 const TEMPLATES = {
   gentle: { label: 'Gentle reminder', icon: Clock,
-    build: (d) => `Hi ${d.clientName || 'there'},\n\nJust a friendly heads up that invoice for "${d.projectName || 'our project'}" (${d.amount}) is due on ${d.dueDateLabel}.\n\nNo action needed if it's already scheduled \u2014 otherwise you can pay securely here: ${d.payLink}\n\nThanks so much for working with me!\n\nBest,\n${d.freelancerName || 'Your name'}` },
+    build: (d) => `Hi ${d.clientName || 'there'},\n\nJust a friendly heads up that invoice for "${d.projectName || 'our project'}" (${d.amount}) is due on ${d.dueDateLabel}.\n\nNo action needed if it's already scheduled -otherwise you can pay securely here: ${d.payLink}\n\nThanks so much for working with me!\n\nBest,\n${d.freelancerName || 'Your name'}` },
   dueDay: { label: 'Due-day alert', icon: AlertTriangle,
     build: (d) => `Hi ${d.clientName || 'there'},\n\nThis is a quick note that invoice for "${d.projectName || 'our project'}" (${d.amount}) is due today.\n\nYou can settle it in under a minute here: ${d.payLink}\n\nLet me know if you have any questions about the invoice.\n\nBest,\n${d.freelancerName || 'Your name'}` },
   overdue: { label: 'Overdue escalation', icon: Send,
@@ -141,7 +141,7 @@ function DashboardPage({ invoices, goToInvoices }) {
     <>
       <div className="flex items-start justify-between mb-6 flex-wrap gap-3">
         <div>
-          <h1 className="text-2xl font-semibold flex items-center gap-2" style={{ color: NAVY }}>Good morning, Dev <span>\uD83D\uDC4B</span></h1>
+          <h1 className="text-2xl font-semibold flex items-center gap-2" style={{ color: NAVY }}>Good morning, Dev <span>👋</span></h1>
           <p className="text-sm mt-1" style={{ color: TEXT_SECONDARY }}>Here's what's happening with your settlements today.</p>
         </div>
         <button onClick={goToInvoices} className="flex items-center gap-2 px-4 py-2.5 rounded-lg text-sm font-medium text-white transition-transform active:scale-95" style={{ backgroundColor: GREEN }}>
